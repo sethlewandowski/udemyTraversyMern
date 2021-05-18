@@ -4,9 +4,26 @@ import { Component } from '@angular/core'
     selector: 'app-user',
     templateUrl: './user.component.html',
     styleUrls: ['./user.component.css']
-    //template: '<h2>John Doe</h2>'
 })
 
 export class UserComponent {
+    // Properties
+    firstName: string = 'Seth';
+    lastName = 'Lew';
+    age = 30;
 
+    //Methods
+    constructor() {
+        this.sayHello()
+        this.hasBirthday()
+    }
+
+    sayHello() {
+        console.log(`Hello ${this.firstName}`)
+    }
+
+    hasBirthday() {
+        this.age++ 
+        console.log(this.age)
+    }
 }
