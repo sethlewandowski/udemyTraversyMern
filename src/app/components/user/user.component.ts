@@ -8,14 +8,29 @@ import { Component } from '@angular/core'
 
 export class UserComponent {
     // Properties
-    firstName: string = 'Seth';
-    lastName = 'Lew';
-    age = 30;
+    firstName: string;
+    lastName: string;
+    age: number;
+    address: object;
+
+    foo: any;
+    hasKids: boolean;
+    numberArray: number[]; //array of numbers
+
 
     //Methods
+    // Constructor will run before output in html 
     constructor() {
-        this.sayHello()
-        this.hasBirthday()
+        this.firstName = "John";
+        this.lastName = "Doe";
+        this.age = 22;
+        this.address = {
+            street: '21 e 47th street',
+            city: 'Boston',
+            state: 'MA'
+        }
+        this.hasKids = true;
+        this.numberArray = [1, 2, 3]
     }
 
     sayHello() {
@@ -25,5 +40,9 @@ export class UserComponent {
     hasBirthday() {
         this.age++ 
         console.log(this.age)
+    }
+
+    addNumbers(num1: number, num2: number): number {
+        return num1 + num2
     }
 }
