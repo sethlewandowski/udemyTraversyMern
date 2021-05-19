@@ -1,16 +1,16 @@
 <h2>Users</h2>
-<button [disabled]="!enableAdd" class="btn btn-block mb-3" [ngClass]="currentClasses">Add New User</button>
-<ul class="list-unstyled" *ngIf="!loading">
-    <li class="card card-body mb-2" *ngFor="let user of users" [class.bg-light]="user.isActive" [style.border-color]="user.isActive ? 'green' : ''">
+<button [disabled]="!enableAdd" class="btn btn-block mb-3">Add New User</button>
+<ul class="list-unstyled">
+    <li class="card card-body mb-2" *ngFor="let user of users" [class.bg-light]="user.isActive">
         <div class="row">
             <div class="col-sm -4">
                 <img *ngIf="user.image" class="img-fluid" [src]="user.image" alt="">
             </div>
             <div class="col-sm-8">
-                <h2 [ngStyle]="currentStyles">{{ user.firstName }}  {{ user.lastName }}</h2>
+                <h2>{{ user.firstName }}  {{ user.lastName }}</h2>
                 <ul class="list-group" *ngIf="showExtended">
                     <li class="list-group-item">Age: {{ user.age }}</li>
-                    <li class="list-group-item">Address: {{ user.address }}</li>
+                    <li class="list-group-item">Date: {{ user.registered | date:"YYYY" }}</li>
                 </ul>
             </div>
         </div>
