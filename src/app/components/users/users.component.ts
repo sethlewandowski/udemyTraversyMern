@@ -13,6 +13,7 @@ export class UsersComponent implements OnInit {
   loading: boolean = true;
   enableAdd: boolean = true;
   currentClasses = {};
+  currentStyles = {};
 
   constructor() { }
 
@@ -21,7 +22,7 @@ export class UsersComponent implements OnInit {
         {
           firstName: 'Seth',
           lastName: 'Lew',
-          age: 22,
+          // age: 22,
           address: {
               street: '3 e 4th',
               city: 'Boston',
@@ -57,13 +58,20 @@ export class UsersComponent implements OnInit {
       ];
 
       this.loading = false;
-      this.setCurrentClasses()
+      this.setCurrentClasses();
+      this.setCurrentStyles();
     }
 
     setCurrentClasses() {
       this.currentClasses = {
         'btn-success': this.enableAdd,
         'big-text': this.showExtended
+      }
+    }
+
+    setCurrentStyles() {
+      this.currentStyles = {
+        'padding-top': this.showExtended ? '0' : '40px'
       }
     }
     
