@@ -9,53 +9,50 @@ import { User } from '../../models/User'
 })
 export class UsersComponent implements OnInit {
   users!: User[];
+  showExtended: boolean = true;
+  loading: boolean = true;
 
   constructor() { }
 
-  ngOnInit(): void {
-    this.users = [
+  ngOnInit() {
+    setTimeout( () => {
+      this.users = [
+        {
+          firstName: 'Seth',
+          lastName: 'Lew',
+          age: 22,
+          address: {
+              street: '3 e 4th',
+              city: 'Boston',
+              state: 'MA'
+          }
+      },
       {
-        firstName: 'Seth',
-        lastName: 'Lew',
-        age: 22,
+        firstName: 'Karen',
+        lastName: 'Jones',
+        age: 52,
         address: {
-            street: '3 e 4th',
+            street: '233 e 22th',
             city: 'Boston',
             state: 'MA'
         }
-    },
-    {
-      firstName: 'Karen',
-      lastName: 'Jones',
-      age: 52,
-      address: {
-          street: '233 e 22th',
-          city: 'Boston',
-          state: 'MA'
+      },
+      {
+        firstName: 'Rosie',
+        lastName: 'Donnel',
+        age: 26,
+        address: {
+            street: '233 e 47th',
+            city: 'Boston',
+            state: 'MA'
+        }
       }
-    },
-    {
-      firstName: 'Rosie',
-      lastName: 'Donnel',
-      age: 26,
-      address: {
-          street: '233 e 47th',
-          city: 'Boston',
-          state: 'MA'
-      }
-    }
-    ];
+      ];
 
-    this.addUser({
-      firstName: 'David',
-      lastName: 'Jackson',
-      age: 28,
-      address: {
-          street: '12 wake street',
-          city: 'Boston',
-          state: 'MA'
-      }
-    })
+      this.loading = false;
+    }, 2000)
+
+    
   }
 
   addUser(user: User) {
