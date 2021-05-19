@@ -11,6 +11,7 @@ export class UsersComponent implements OnInit {
   users!: User[];
   showExtended: boolean = true;
   loading: boolean = true;
+  enableAdd: boolean = true;
 
   constructor() { }
 
@@ -24,7 +25,8 @@ export class UsersComponent implements OnInit {
               street: '3 e 4th',
               city: 'Boston',
               state: 'MA'
-          }
+          },
+          image: 'https://placeimg.com/600/600/people/3'
       },
       {
         firstName: 'Karen',
@@ -34,7 +36,9 @@ export class UsersComponent implements OnInit {
             street: '233 e 22th',
             city: 'Boston',
             state: 'MA'
-        }
+        },
+        image: 'https://placeimg.com/600/600/people/2'
+
       },
       {
         firstName: 'Rosie',
@@ -44,7 +48,9 @@ export class UsersComponent implements OnInit {
             street: '233 e 47th',
             city: 'Boston',
             state: 'MA'
-        }
+        },
+        image: 'https://placeimg.com/600/600/people/1'
+
       }
       ];
 

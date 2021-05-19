@@ -23,7 +23,7 @@ export class UserComponent implements OnInit {
                 street: '233 e 47th',
                 city: 'Boston',
                 state: 'MA'
-            }
+            },
         }
     }
 }
