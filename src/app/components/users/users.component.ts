@@ -12,6 +12,7 @@ export class UsersComponent implements OnInit {
   showExtended: boolean = true;
   loading: boolean = true;
   enableAdd: boolean = true;
+  currentClasses = {};
 
   constructor() { }
 
@@ -26,7 +27,8 @@ export class UsersComponent implements OnInit {
               city: 'Boston',
               state: 'MA'
           },
-          image: 'https://placeimg.com/600/600/people/3'
+          image: 'https://placeimg.com/600/600/people/3',
+          isActive: true
       },
       {
         firstName: 'Karen',
@@ -37,8 +39,8 @@ export class UsersComponent implements OnInit {
             city: 'Boston',
             state: 'MA'
         },
-        image: 'https://placeimg.com/600/600/people/2'
-
+        image: 'https://placeimg.com/600/600/people/2',
+        isActive: false
       },
       {
         firstName: 'Rosie',
@@ -55,6 +57,14 @@ export class UsersComponent implements OnInit {
       ];
 
       this.loading = false;
+      this.setCurrentClasses()
+    }
+
+    setCurrentClasses() {
+      this.currentClasses = {
+        'btn-success': this.enableAdd,
+        'big-text': this.showExtended
+      }
     }
     
   }
