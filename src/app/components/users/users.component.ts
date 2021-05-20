@@ -12,6 +12,7 @@ export class UsersComponent implements OnInit {
   showExtended: boolean = true;
   loading: boolean = true;
   enableAdd: boolean = true;
+  showUserForm: boolean = false;
 
   constructor() { }
 
@@ -59,6 +60,10 @@ export class UsersComponent implements OnInit {
       ];
 
       this.loading = false;
+    }
+
+    onSubmit() {
+      console.log(123)
     }
     
   }
