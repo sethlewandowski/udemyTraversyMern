@@ -9,7 +9,7 @@ import { User } from '../../models/User'
 })
 export class UsersComponent implements OnInit {
   users!: User[];
-  showExtended: boolean = true;
+  showExtended: boolean = false;
   loading: boolean = true;
   enableAdd: boolean = true;
 
@@ -58,8 +58,9 @@ export class UsersComponent implements OnInit {
       this.loading = false;
     }
 
-    addUser(user: User) {
-      this.users.push(user);
+
+    addUser() {
+      this.users.push({firstName: 'ted', lastName: 'jones'})
     }
     
   }
