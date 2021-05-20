@@ -1,0 +1,16 @@
+What is a service? 
+
+Class that can send functionality & Data across multiple components
+
+Benefits of Services:
+- Keeps components lean
+- DRY (dont repeat yourself)
+- Ideal place for ajax calls using the http module 
+
+How to create:
+- create a new file /services/my-service.ts
+- import @Injectable and create class 
+- add as a provider to @ngModule
+- call from component(s)
+
+
