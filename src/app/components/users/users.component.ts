@@ -11,11 +11,7 @@ export class UsersComponent implements OnInit {
   user: User = {
     firstName: '',
     lastName: '',
-    address: {
-      street: '',
-      city: '',
-      state: ''
-    }
+    email: '',
   };
   users!: User[];
   showExtended: boolean = true;
@@ -30,12 +26,7 @@ export class UsersComponent implements OnInit {
         {
           firstName: 'Seth',
           lastName: 'Lew',
-          // age: 22,
-          address: {
-              street: '3 e 4th',
-              city: 'Boston',
-              state: 'MA'
-          },
+          email: 'seth@gmail.com',
           isActive: true,
           registered: new Date('01/02/2021 08:30:00'),
         hide: false
@@ -43,12 +34,7 @@ export class UsersComponent implements OnInit {
       {
         firstName: 'Karen',
         lastName: 'Jones',
-        age: 52,
-        address: {
-            street: '233 e 22th',
-            city: 'Boston',
-            state: 'MA'
-        },
+        email: 'karen@gmail.com',
         isActive: false,
         registered: new Date('01/23/2021 08:30:00'),
         hide: true
@@ -56,12 +42,7 @@ export class UsersComponent implements OnInit {
       {
         firstName: 'Rosie',
         lastName: 'Donnel',
-        age: 26,
-        address: {
-            street: '233 e 47th',
-            city: 'Boston',
-            state: 'MA'
-        },
+        email: 'rosie@gmail.com',
         isActive: true,
         registered: new Date('06/02/2021 08:30:00'),
         hide: true
@@ -75,20 +56,17 @@ export class UsersComponent implements OnInit {
       console.log(123)
     }
 
-    addUser(){
-      this.user.isActive = true;
-      this.user.registered = new Date();
-      this.users.unshift(this.user);
+    // addUser(){
+    //   this.user.isActive = true;
+    //   this.user.registered = new Date();
+    //   this.users.unshift(this.user);
 
-      this.user = {firstName: '',
-      lastName: '',
-      address: {
-        street: '',
-        city: '',
-        state: ''
-      }
-    }
-  }
+    //   this.user = {
+    //     firstName: '',
+    //     lastName: '',
+    //     email: '',
+    //   }
+    // }
     
   }
 
