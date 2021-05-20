@@ -52,7 +52,7 @@ export class UsersComponent implements OnInit {
       this.loading = false;
     }
 
-    onSubmit() {
+    onSubmit(e) {
       console.log(123)
     }
 
